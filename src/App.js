@@ -2,16 +2,12 @@ import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import './App.css';
 import { Route,Routes  } from 'react-router-dom'; 
+import Header from "./components/header/header.component";
 function App() {
-  const HatPage = () => {
-    return (
-      <div className="">
-        <h1>Hats</h1>
-      </div>
-    )
-  }
+   
   return (
-    <div > 
+    <div >
+      <Header/> 
       <Routes>
         <Route exact path='/' element={<HomePage/>}/>      
         <Route path='/shop' element={<ShopPage/>} />
