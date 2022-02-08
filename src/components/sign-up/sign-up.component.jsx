@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth, createUserProfileDocument } from '../../firebase/firebase.config';
+import { auth, createUserProfileDocument } from '../../config/firebase.config';
 
 const SignUp = () => {
     const [signUpDetails, setSignUpDetails] = useState({
