@@ -42,9 +42,10 @@ function App({ setCurrentUser, currentUser }) {
       <Routes>
         <Route exact path='/' element={<HomePage/>}/>      
         <Route path='/shop' element={<ShopPage />} />
-        <PrivateRoute>
-          <Route path='/signin' element={<SignInAndSignUpPage />} />          
-        </PrivateRoute>
+        <Route path='/signin' element={
+          <PrivateRoute>
+           <SignInAndSignUpPage />
+        </PrivateRoute>}/>
        </Routes> 
     </div>
   );

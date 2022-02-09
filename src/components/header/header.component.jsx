@@ -6,7 +6,7 @@ import { auth } from '../../config/firebase.config';
 import CartIcon from '../cart-icon/cart-icon.component';
 import { connect } from 'react-redux';
 import CartDropdown from '../cart-dropdown/cart-dropdown.components';
-const Header = ({currentUser}) => {
+const Header = ({currentUser,hidden}) => {
     return (
         <div className='header'>
             <Link className='logo-container' to='/'>
