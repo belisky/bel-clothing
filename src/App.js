@@ -48,7 +48,7 @@ function App({ setCurrentUser, currentUser }) {
     <div >
       <Header /> 
       <Routes>
-        <Route exact path='/' element={<HomePage/>}/>      
+        <Route  path='/' element={<HomePage/>}/>      
         <Route   path='/shop' element={<ShopPage />}/>
             <Route  path='/shop/:collectionId' element={<CollectionPage/>}/>
          
