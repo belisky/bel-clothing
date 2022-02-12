@@ -8,9 +8,9 @@ import {createStructuredSelector} from 'reselect'
 
 
 
-const CartIcon  = ({toggeleCartHidden,itemCount}) => {
+const CartIcon  = ({toggleCartHidden,itemCount}) => {
     return (
-        <div className="cart-icon" onClick={toggeleCartHidden}>
+        <div className="cart-icon" onClick={toggleCartHidden}>
             <ShoppingIcon className='shopping-icon'/>
             <span className="item-count">{itemCount}</span>
          </div>

@@ -3,13 +3,13 @@ import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/signIn-and-signUp/signin-and-signUp.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
-
+import CollectionPage from './pages/collection/collection.component';
 
 import './App.css';
 
 
 import {   useEffect } from 'react';
-import { Route, Routes,Navigate } from 'react-router-dom';
+import { Route, Routes,Navigate,Outlet } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './config/firebase.config'; 
 import { onSnapshot } from 'firebase/firestore';
 import { connect } from 'react-redux';
@@ -25,7 +25,7 @@ function App({ setCurrentUser, currentUser }) {
        if (userAuth) {
          const userRef = await createUserProfileDocument(userAuth);
          onSnapshot(userRef, (doc) => {
-            console.log(doc.data())
+            //console.log(doc.data())
            setCurrentUser({              
                id: doc.id,
                ...doc.data()
@@ -49,13 +49,25 @@ function App({ setCurrentUser, currentUser }) {
       <Header /> 
       <Routes>
         <Route exact path='/' element={<HomePage/>}/>      
-        <Route path='/shop' element={<ShopPage />} />
-        <Route exact path='/checkout' element={<CheckoutPage />} />
+        <Route   path='/shop' element={<ShopPage />}/>
+            <Route  path='/shop/:collectionId' element={<CollectionPage/>}/>
+         
+        <Route  path='/checkout' element={<CheckoutPage />} />
         <Route path='/signin' element={
           <PrivateRoute>
            <SignInAndSignUpPage />
-        </PrivateRoute>}/>
-       </Routes> 
+            </PrivateRoute>} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
+          
+      </Routes> 
+      <Outlet/>
     </div>
   );
  }
