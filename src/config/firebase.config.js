@@ -57,4 +57,4 @@ export const signInWithGoogle = () => {
 }
         
 
-export default auth;
+export default app;

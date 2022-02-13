@@ -36,7 +36,7 @@ function App({ setCurrentUser, currentUser }) {
        setCurrentUser( userAuth);
      })
      return unsubscribe;
-  },[]);
+  },[currentUser]);
 
   const PrivateRoute = ({ children }) => {  
 
