@@ -33,10 +33,10 @@ function App({ setCurrentUser, currentUser }) {
          })
          // console.log('currentuser;',currentUser);
         }
-       setCurrentUser( userAuth);
+    
      })
      return unsubscribe;
-  },[currentUser]);
+  },[setCurrentUser] );
 
   const PrivateRoute = ({ children }) => {  
 
