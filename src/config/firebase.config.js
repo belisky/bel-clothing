@@ -5,17 +5,18 @@ import { getAuth,signInWithPopup,GoogleAuthProvider } from 'firebase/auth';
  
 const app=initializeApp( { 
 
-    apiKey:process.env.REACT_APP_FIREBASE_API_KEY,
+    apiKey:'AIzaSyAMgyG4raiF06iVkRFCbKk1XRgCHTlh37A',
 
-    authDomain:process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    authDomain: 'b-commerce-dev.firebaseapp.com',
 
-    projectId:process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    projectId:'b-commerce-dev',
 
-    storageBucket:process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    storageBucket: 'b-commerce-dev.appspot.com',
 
-    messagingSenderId:process.env.REACT_APP_FIREBASE_MESSAGING_SENDERID,
+    messagingSenderId: '151808759160',
 
-    appId:process.env.REACT_APP_FIREBASE_APP_ID
+    appId:'1:151808759160:web:cffa1af06f1cebe836248d'
+
 
 });
 export const auth = getAuth(app);
