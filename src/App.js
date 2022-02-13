@@ -32,12 +32,14 @@ function App({ setCurrentUser, currentUser }) {
            })
          })
          // console.log('currentuser;',currentUser);
-        }
+       }
+       console.log('env:', process.env.REACT_APP_FIREBASE_API_KEY);
+
     
      })
      return unsubscribe;
-  },[setCurrentUser] );
-
+   }, [setCurrentUser]);
+ 
   const PrivateRoute = ({ children }) => {  
 
     return currentUser ? (<Navigate to="/" />) : (children)
