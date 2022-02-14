@@ -1,9 +1,13 @@
- # This is an ecommerce app which deals in;
+ # This is an e-commerce app which deals in;
  
  ### Shoes
  ### Jackets
  ### Men's wear
  ### Women's wear
+ 
+ # You can check out this hosted App on netlify and Heroku.
+ ### https://b-clothing-live.herokuapp.com/ --Heroku
+ ### https://620961d0eb7555df87dc8ebb--bel-clothing.netlify.app/  --Netlify
  
  # New Stuff I learned.
  ### The React way of thinking, building big stuff by breaking down into smaller blocks called components like lego blocks.
@@ -24,7 +28,7 @@
  # HomePage Desktop View
  ![Screen Shot 2022-02-13 at 19 13 36](https://user-images.githubusercontent.com/61013338/153773831-ec777784-3bbc-4abc-b6b8-e6436720d885.png)
  
- # Sign Page View
+ # Sign-in and Sign-up Page View
 ![Screen Shot 2022-02-13 at 19 14 06](https://user-images.githubusercontent.com/61013338/153773853-0dafc81b-ca56-417a-91b1-72204b578e34.png)
 
 # Shop Page View
@@ -35,8 +39,5 @@
 
 # Checkout Page.
 ![Screen Shot 2022-02-13 at 19 16 40](https://user-images.githubusercontent.com/61013338/153773890-059fd657-dad6-4a54-8dd8-565305213849.png)
-
-
-#Hosting
-### this site is hosted on Heroku and Netlify
+ 
  
