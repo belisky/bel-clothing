@@ -3,8 +3,7 @@ import { CustomButtonContainer } from './custom-button.styles';
 
 const CustomButton = ({children,...props}) => {
     return (
-        <CustomButtonContainer {...props}>
-             
+        <CustomButtonContainer {...props}>             
             {children}        
         </CustomButtonContainer>
     )

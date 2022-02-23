@@ -54,6 +54,7 @@ min-width: 165px;
   cursor: pointer;
   display:flex;
   justify-content: center;
+   
 
 ${getButtonStyles}
  `

@@ -11,16 +11,14 @@ import CollectionsOverview from '../../components/collections-overview/collectio
 // import { collection, doc, onSnapshot } from 'firebase/firestore';
 // import CollectionPage from '../collection/collection.component';
 import './shop.styles.scss'
+import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
+
  
-
-const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
-
 const ShopPage = ({ isLoading }) => {  
 
     return (
         <div className='shop-page'>
-            <CollectionsOverviewWithSpinner isLoading={isLoading}/>
-       
+            <CollectionsOverviewContainer/>       
         </div>
     );
 };
