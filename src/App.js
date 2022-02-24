@@ -24,12 +24,13 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions'; 
 import { selectCurrentUser } from "./redux/user/user.selector";
  
-import { fetchCollectionsStartAsync } from "./redux/shop/shop.actions";
+import { fetchCollectionsStart } from "./redux/shop/shop.actions";
 import { selectCollectionsForPreview,selectIsCollectionFetching,selectIsCollectionLoaded} from './redux/shop/shop.selector'; 
 import CollectionPageContainer from "./pages/collection/collection.container";
 
 
-function App({ setCurrentUser, currentUser,collectionsArray,updateCollections,isCollectionFetching,fetchCollectionsStartAsync,isCollectionsLoaded }) {
+function App({ setCurrentUser, currentUser, collectionsArray, updateCollections, isCollectionFetching, fetchCollectionsStartAsync, isCollectionsLoaded,
+  fetchCollectionsStart }) {
      
    useEffect(() => {
      const unsubscribe=auth.onAuthStateChanged(async (userAuth) => {
@@ -49,7 +50,8 @@ function App({ setCurrentUser, currentUser,collectionsArray,updateCollections,is
    }, [setCurrentUser]);
   
   useEffect(() => {
-    fetchCollectionsStartAsync();
+    fetchCollectionsStart();
+     
   }, []);
  
   const PrivateRoute = ({ children }) => {  
@@ -93,7 +95,7 @@ const mapStateToProps = createStructuredSelector({
 })
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user)),
-  fetchCollectionsStartAsync:()=>dispatch(fetchCollectionsStartAsync())
+  fetchCollectionsStart:()=>dispatch(fetchCollectionsStart())
   
 });
 
