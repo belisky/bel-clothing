@@ -4,7 +4,11 @@ import CustomButton from '../custom-button/custom-button.component';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, createUserProfileDocument } from '../../config/firebase.config';
 
-const SignUp = () => {
+import { signUpStart } from '../../redux/user/user.actions';
+
+import {connect} from 'react-redux'
+
+const SignUp = ({signUpStart}) => {
     const [signUpDetails, setSignUpDetails] = useState({
         displayName: '',
         email: '',
@@ -18,20 +22,8 @@ const SignUp = () => {
             alert('passwords dont match');
             return
         } 
-        try {
-             createUserWithEmailAndPassword(auth, email, password)
-                .then(({user})=> {
-                      createUserProfileDocument(user, { displayName });
-                    setSignUpDetails({
-                        displayName: '',
-                        email: '',
-                        password: '',
-                        confirmPassword: ''
-                    })
-            })
-        } catch (err) {
-            console.log(err)
-        }
+        signUpStart({displayName,email,password});
+   
     }
     const handleChange = e => {
         const { value, name } = e.target;
@@ -82,4 +74,8 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+const mapDispatchToProps = dispatch => ({
+    signUpStart:userCredentials=>dispatch(signUpStart(userCredentials))
+})
+
+export default connect(null,mapDispatchToProps)(SignUp);

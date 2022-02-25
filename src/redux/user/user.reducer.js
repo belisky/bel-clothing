@@ -5,7 +5,10 @@ const INITIAL_STATE = {
 } 
 const {    
     SIGN_IN_FAILURE,
-     SIGN_IN_SUCCESS      
+    SIGN_IN_SUCCESS,
+    SIGN_OUT_FAILURE,
+    SIGN_OUT_SUCCESS,
+     SIGN_UP_FAILURE
 } = UserActionTypes;
 
 const userReducer = (state = INITIAL_STATE,{type,payload}) => {
@@ -16,7 +19,15 @@ const userReducer = (state = INITIAL_STATE,{type,payload}) => {
                 currentUser: payload,
                 error:null
             }
-        case  SIGN_IN_FAILURE:        
+        case SIGN_OUT_SUCCESS:
+            return {
+                ...state,
+                currentUser: null,
+               error:null
+            }
+        case SIGN_IN_FAILURE: 
+        case SIGN_OUT_FAILURE:
+        case SIGN_UP_FAILURE:
             return {
                 ...state,
                 error:payload

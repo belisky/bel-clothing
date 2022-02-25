@@ -5,7 +5,8 @@ const {
     TOGGLE_CART_HIDDEN,
     ADD_ITEM,
     CLEAR_ITEM_FROM_CART,
-    REMOVE_ITEM
+    REMOVE_ITEM,
+    CLEAR_CART
 } = CartActionTypes;
 const INITIAL_STATE = {
     hidden: true,
@@ -33,6 +34,11 @@ const cartReducer = (state = INITIAL_STATE, { type, payload }) => {
             return {
                 ...state,
                 cartItems:removeItemFromCart(state.cartItems,payload)
+            }
+        case CLEAR_CART:
+            return {
+                ...state,
+                cartItems:[]
             }
         default:
             return state

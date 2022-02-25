@@ -21,9 +21,10 @@ import { fetchCollectionsStart } from "./redux/shop/shop.actions";
 import { selectCollectionsForPreview,selectIsCollectionFetching } from './redux/shop/shop.selector'; 
 import CollectionPageContainer from "./pages/collection/collection.container";
 
+import { checkUserSession } from "./redux/user/user.actions";
 
 function App({  currentUser, 
-  fetchCollectionsStart }) {
+  fetchCollectionsStart,checkUserSession }) {
      
    useEffect(() => {
     //  const unsubscribe=auth.onAuthStateChanged(async (userAuth) => {
@@ -31,7 +32,7 @@ function App({  currentUser,
     //      const userRef = await createUserProfileDocument(userAuth);
     //      onSnapshot(userRef, (doc) => {
     //         //console.log(doc.data())
-    //        setCurrentUser({              
+    //        setCurrentUser({
     //            id: doc.id,
     //            ...doc.data()
     //        })
@@ -40,6 +41,7 @@ function App({  currentUser,
     //    }
     // })
     //  return unsubscribe;
+     checkUserSession()
    }, []);
   
   useEffect(() => {
@@ -87,7 +89,8 @@ const mapStateToProps = createStructuredSelector({
   
 })
 const mapDispatchToProps = dispatch => ({
-   fetchCollectionsStart:()=>dispatch(fetchCollectionsStart())
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
+  checkUserSession:()=>dispatch(checkUserSession())
   
 });
 
