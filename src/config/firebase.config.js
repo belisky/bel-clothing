@@ -75,10 +75,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
 
 }
+export const googleProvider = new GoogleAuthProvider();
 export const signInWithGoogle = () => {
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: "select_account" });
-    signInWithPopup(auth, provider)
+    googleProvider.setCustomParameters({ prompt: "select_account" });
+    signInWithPopup(auth, googleProvider)
         .then((re) => { console.log(re) })
         .catch((err) => {
         console.log(err)
